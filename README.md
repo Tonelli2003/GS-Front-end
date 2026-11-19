@@ -10,7 +10,7 @@
 > | Marcelo Roberto Maso Junior | RM562163 |
 > | Vinícius Adrian Siqueira de Oliveira | RM564962 |
 >
-> 🐳 Deploy: **Opção B (Docker)** — `docker compose up --build` · 🎬 Vídeo: _cole aqui o link do YouTube (não listado)_
+> 🐳 Deploy: **Opção B (Docker)** — `docker compose up --build` · 🎬 Vídeo: https://youtu.be/3J3SUTOs1-E
 
 O **Bairro em Dia** é um app para moradores relatarem problemas do bairro — **buracos, iluminação com defeito, lixo acumulado, incômodo sonoro** e outros. A pessoa informa o local e descreve o problema (por texto, **áudio** ou **foto**). A **IA** organiza e classifica o relato, o morador **confere e corrige** a análise e recebe um **protocolo** para acompanhar. O gestor público tem uma fila priorizada por urgência para tratar as solicitações. Um **assistente** orienta o cidadão sobre onde e como buscar atendimento.
 
