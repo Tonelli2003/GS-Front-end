@@ -1,0 +1,29 @@
+services:
+  api:
+    build: ./backend
+    env_file: .env
+    environment:
+      DB_PATH: /data/bairro_em_dia.db
+      ALLOWED_ORIGINS: http://localhost:8501
+    volumes:
+      - dados:/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build: ./frontend
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  dados:

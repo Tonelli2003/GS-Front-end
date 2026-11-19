@@ -1,0 +1,27 @@
+# Blueprint do Render: sobe API e front como dois serviços Docker.
+# Depois do primeiro deploy, ajuste ALLOWED_ORIGINS (URL do front) e API_URL (URL da API).
+services:
+  - type: web
+    name: bairro-em-dia-api
+    runtime: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GESTOR_TOKEN
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://bairro-em-dia-web.onrender.com
+      - key: SEED_DEMO
+        value: "true"
+
+  - type: web
+    name: bairro-em-dia-web
+    runtime: docker
+    rootDir: frontend
+    plan: free
+    envVars:
+      - key: API_URL
+        value: https://bairro-em-dia-api.onrender.com

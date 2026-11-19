@@ -1,0 +1,15 @@
+# segredos
+.env
+**/.streamlit/secrets.toml
+
+# dados locais
+backend/data/
+*.db
+*.sqlite
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
